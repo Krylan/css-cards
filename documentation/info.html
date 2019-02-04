@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>CSS Cards by Krylan</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="info.css">
+    <link rel="stylesheet" href="../classic-playset.css">
+</head>
+<body>
+    <div class="container-header" style="background-color:#9dbdc9;">
+		<div class="container">
+			<div class="no_select cursor site_title" style="color:#9dbdc9;">
+				CSS Cards by <b>Krylan</b>
+			</div>
+			<div class="row">
+				<div class="col-md-12 no_select cursor big_header">
+					INFO
+				</div>
+			</div>
+		</div>
+	</div>
+    <div class="container-content">
+        <h1>CSS Cards by <b>Krylan</b></h1>
+		Thanks for your interest in this project.<br />
+		It includes one CSS file with rules for making a full classical card deck with animations and cards arrangements.<br />
+		It has easy to edit variables, which define size, shadows and corner rounding for your cards.<br /><br />
+		If you have any questions or comments, you can contact me on <a href="https://krylan.ovh/portfolio/" target="_blank">my portfolio</a>.
+		
+		<h3>How to use</h3>
+		To start with CSS Cards it's good to make general div containing all card elements (hands, decks etc.).<br /> For set of cards used for classical games I'm giving class 'classic-playset'.<br /> Inside, we can arrange set of cards in various formations – defined by me are 'hand' and 'deck'.<br /> You can also turn cards back with animations just by adding or removing 'back' class to the 'card' element.<br /><br />
+		Inside card you can make div with attributes 'data-suit' and 'data-rank'.<br /> These two are responsible for corner marks of cards.<br /> In 'data-suit' there are defined following values: [hearts, diamonds, clubs, spades, red, black].<br /> First four are defining symbol, which is showed below rank of card – next two are for color-only (for example for jokers).<br />
+		In 'data-rank' you can write anything you want.<br /> It depends on you, which symbols you want on cards. It's also displayed in corners of card.<br />
+		Inside of this div element you can write a symbol, which is displayed on center of card, or attach a background-image for a card (to do so, you need to add new rule for specific card with 'background-image' rule only).<br /><br />
+		You can, of course, make a custom card set with this CSS file. I would be really happy to see new creations and other uses of this project.
+		<br /><br />
+		
+		<div class="classic-playset" style="margin-top:50px;height:200px;">
+			<card class="back" onclick="this.classList.toggle('back')">
+				<div data-suit="red" data-rank="&#9733;">&#9733;</div>
+			</card>
+		</div>
+		<br style="clear:both" />
+		<h3>Demo 1</h3>
+		Just click on the card and see what you got.<br /> All you need to do to get this effect is toggle class 'back' for 'card' element.<br /> For example, for 'onclick' event do "this.classList.toggle('back');".
+		<br /><br />
+</pre>
+		
+		<div class="classic-playset" style="height:300px;">
+		<div class="hand" style="top:100px;">
+			<card>
+				<div data-suit="hearts" data-rank="6">&hearts;</div>
+			</card>
+			<card>
+				<div data-suit="spades" data-rank="K">&#9818;</div>
+			</card>
+			<card>
+				<div data-suit="diamonds" data-rank="2">&#9830;</div>
+			</card>
+		</div>
+		</div>
+		<br style="clear:both" />
+		<h3>Demo 2</h3>
+		In this demo I used three cards in 'hand' formation. In this formation cards on hover are exposed to the player.
+		<br /><br />
+		Code:<br />
+		<pre>
+<div class="classic-playset">
+	<div class="hand">
+		<card>
+			<div data-suit="hearts" data-rank="6">&hearts;</div>
+		</card>
+		<card>
+			<div data-suit="spades" data-rank="K">&#9818;</div>
+		</card>
+		<card>
+			<div data-suit="diamonds" data-rank="2">&#9830;</div>
+		</card>
+	</div>
+</div>
+</pre>
+
+		<div class="classic-playset" style="height:300px;">
+		<div class="deck" style="top:100px;">
+			<card class="back"></card>
+			<card class="back"></card>
+			<card class="back"></card>
+			<card class="back"></card>
+			<card class="back"></card>
+			<card class="back"></card>
+			<card class="back"></card>
+			<card class="back"></card>
+			<card class="back"></card>
+			<card class="back"></card>
+			<card class="back"></card>
+		</div>
+		</div>
+		<br style="clear:both" />
+		<h3>Demo 3</h3>
+		Now I used second formation called a 'deck'. Cards are stacked in a pile, so players can draw new cards.<br />
+		You can stock them as much as you want and you can see how many cards are in the deck.<br /> To make cards turned back, you need to use class 'back' on 'card' element.
+		<br /><br />
+		Code:<br />
+		<pre>
+<div class="classic-playset">
+	<div class="deck">
+		<card class="back"></card>
+		<card class="back"></card>
+		<card class="back"></card>
+		<card class="back"></card>
+		<card class="back"></card>
+		<card class="back"></card>
+		<card class="back"></card>
+		<card class="back"></card>
+		<card class="back"></card>
+		<card class="back"></card>
+		<card class="back"></card>
+	</div>
+</div>
+</pre>
+		Note, that content of 'card' elements are empty. I can't let players cheat using developer console, right?
+  </div>
+  
+<script>
+var elements = document.querySelectorAll('pre');
+elements.forEach(function(entry) {
+	var code = entry.innerHTML;
+    code = code.replace(/</g, "&lt;");
+    code = code.replace(/>/g, "&gt;");
+	entry.innerHTML = code;
+});
+</script>
+</body>
+</html>
