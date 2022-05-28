@@ -45,6 +45,8 @@ transform: rotateY( 180deg );
 border-radius:var(--card-corner-radius);
 overflow:hidden;
 -moz-backface-visibility: hidden;
+-webkit-backface-visibility: hidden;
+backface-visibility: hidden;
 }
 
 card.back{
